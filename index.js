@@ -334,7 +334,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Running Health OS Server");
+  res.send("Running Replic Commerce Server");
 });
 
 app.listen(port, () => {
