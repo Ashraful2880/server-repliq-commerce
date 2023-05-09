@@ -37,6 +37,7 @@ async function run() {
     const customers = database.collection(`${process.env.CUSTOMER_COLLECTION}`);
     const users = database.collection(`${process.env.USER_COLLECTION}`);
     const blogs = database.collection(`${process.env.BLOG_COLLECTION}`);
+    const teams = database.collection(`${process.env.TEAM_COLLECTION}`);
 
     //<--------------- Products Section API --------------->//
 
@@ -327,6 +328,15 @@ async function run() {
       const AllBlogs = await blogs.find({}).toArray();
       res.send(AllBlogs);
     });
+
+    //<------------ Get All Teams ------------->
+
+    app.get("/teams", async (req, res) => {
+      const AllTeams = await teams.find({}).toArray();
+      res.send(AllTeams);
+    });
+
+
   } finally {
     // await client.close();
   }
